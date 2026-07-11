@@ -1,493 +1,461 @@
+# Translations template for Blog.
+# Copyright (C) 2026 Frappe Technologies Pvt. Ltd.
+# This file is distributed under the same license as the Blog project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: frappe\n"
-"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"Project-Id-Version: Blog VERSION\n"
+"Report-Msgid-Bugs-To: developers@frappe.io\n"
 "POT-Creation-Date: 2026-07-11 19:03+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Arabic\n"
-"Language: ar\n"
+"PO-Revision-Date: 2026-07-11 19:03+0000\n"
+"Last-Translator: developers@frappe.io\n"
+"Language-Team: developers@frappe.io\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=6; plural=(n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5);\n"
 "Generated-By: Babel 2.16.0\n"
 
 #: blog/blog/doctype/blog_post/blog_post.py:380
 msgid "1 comment"
-msgstr "تعليق واحد"
+msgstr ""
 
 #: blog/blog/doctype/blog_post/blog_post.py:92
 msgid "A featured post must have a cover image"
-msgstr "يجب أن تحتوي التدوينة المميزة على صورة غلاف"
+msgstr ""
 
 #. Label of the allow_guest_to_comment (Check) field in DocType 'Blog Settings'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_settings/blog_settings.json
 msgid "Allow Guest to comment"
-msgstr "السماح للزائر بالتعليق"
+msgstr ""
 
 #. Label of the avatar (Attach Image) field in DocType 'Blogger'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blogger/blogger.json
 msgid "Avatar"
-msgstr "الصورة الرمزية"
+msgstr ""
 
 #. Label of the bio (Small Text) field in DocType 'Blogger'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blogger/blogger.json
 msgid "Bio"
-msgstr "نبذة تعريفية"
+msgstr ""
 
 #. Name of a Workspace
-#: blog/blog/doctype/blog_post/blog_post.py:245 blog/blog/doctype/blog_post/templates/blog_post.html:13 blog/blog/doctype/blog_post/templates/blog_post_list.html:2 blog/blog/doctype/blog_post/templates/blog_post_list.html:11 blog/blog/workspace/blog/blog.json
+#: blog/blog/doctype/blog_post/blog_post.py:245
+#: blog/blog/doctype/blog_post/templates/blog_post.html:13
+#: blog/blog/doctype/blog_post/templates/blog_post_list.html:2
+#: blog/blog/doctype/blog_post/templates/blog_post_list.html:11
+#: blog/blog/workspace/blog/blog.json
 msgid "Blog"
-msgstr "مدونة"
+msgstr ""
 
 #. Name of a DocType
 #. Label of the blog_category (Link) field in DocType 'Blog Post'
 #. Label of a shortcut in the Blog Workspace
-#. ai-translated; needs-native-review
-#: blog/blog/doctype/blog_category/blog_category.json blog/blog/doctype/blog_post/blog_post.json blog/blog/workspace/blog/blog.json
+#: blog/blog/doctype/blog_category/blog_category.json
+#: blog/blog/doctype/blog_post/blog_post.json
+#: blog/blog/workspace/blog/blog.json
 msgid "Blog Category"
-msgstr "فئة المدونة"
+msgstr ""
 
 #. Label of the blog_intro (Small Text) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Blog Intro"
-msgstr "مقدمة المدونة"
+msgstr ""
 
 #. Label of the blog_introduction (Small Text) field in DocType 'Blog Settings'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_settings/blog_settings.json
 msgid "Blog Introduction"
-msgstr "مقدمة المدونة"
+msgstr ""
 
 #. Name of a DocType
 #. Label of a shortcut in the Blog Workspace
-#. ai-translated; needs-native-review
-#: blog/blog/doctype/blog_post/blog_post.json blog/blog/workspace/blog/blog.json
+#: blog/blog/doctype/blog_post/blog_post.json
+#: blog/blog/workspace/blog/blog.json
 msgid "Blog Post"
-msgstr "تدوينة"
+msgstr ""
 
 #. Name of a DocType
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_settings/blog_settings.json
 msgid "Blog Settings"
-msgstr "إعدادات المدونة"
+msgstr ""
 
 #. Label of the blog_title (Data) field in DocType 'Blog Settings'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_settings/blog_settings.json
 msgid "Blog Title"
-msgstr "عنوان المدونة"
+msgstr ""
 
 #. Label of a quick_list in the Blog Workspace
-#. ai-translated; needs-native-review
 #: blog/blog/workspace/blog/blog.json
 msgid "Blog in this Month"
-msgstr "تدوينات هذا الشهر"
+msgstr ""
 
 #. Name of a role
 #. Label of the blogger (Link) field in DocType 'Blog Post'
 #. Name of a DocType
 #. Label of a shortcut in the Blog Workspace
-#. ai-translated; needs-native-review
-#: blog/blog/doctype/blog_category/blog_category.json blog/blog/doctype/blog_post/blog_post.json blog/blog/doctype/blog_settings/blog_settings.json blog/blog/doctype/blogger/blogger.json blog/blog/workspace/blog/blog.json
+#: blog/blog/doctype/blog_category/blog_category.json
+#: blog/blog/doctype/blog_post/blog_post.json
+#: blog/blog/doctype/blog_settings/blog_settings.json
+#: blog/blog/doctype/blogger/blogger.json blog/blog/workspace/blog/blog.json
 msgid "Blogger"
-msgstr "مدوّن"
+msgstr ""
 
 #. Label of the browse_by_category (Check) field in DocType 'Blog Settings'
-#: blog/blog/doctype/blog_post/templates/blog_post_list.html:18 blog/blog/doctype/blog_post/templates/blog_post_list.html:21 blog/blog/doctype/blog_settings/blog_settings.json
+#: blog/blog/doctype/blog_post/templates/blog_post_list.html:18
+#: blog/blog/doctype/blog_post/templates/blog_post_list.html:21
+#: blog/blog/doctype/blog_settings/blog_settings.json
 msgid "Browse by category"
-msgstr "تصفح حسب الفئة"
+msgstr ""
 
 #. Label of the cta_label (Data) field in DocType 'Blog Settings'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_settings/blog_settings.json
 msgid "CTA Label"
-msgstr "تسمية الحث على الإجراء"
+msgstr ""
 
 #. Label of the cta_url (Data) field in DocType 'Blog Settings'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_settings/blog_settings.json
 msgid "CTA URL"
-msgstr "رابط الحث على الإجراء"
+msgstr ""
 
 #. Label of the cta_section (Section Break) field in DocType 'Blog Settings'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_settings/blog_settings.json
 msgid "Call to Action"
-msgstr "الحث على الإجراء"
+msgstr ""
 
 #. Label of the comment_limit (Int) field in DocType 'Blog Settings'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_settings/blog_settings.json
 msgid "Comment limit"
-msgstr "حد التعليقات"
+msgstr ""
 
 #. Description of the 'Comment limit' (Int) field in DocType 'Blog Settings'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_settings/blog_settings.json
 msgid "Comment limit per hour"
-msgstr "حد التعليقات في الساعة"
+msgstr ""
 
 #. Label of the content (Text Editor) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Content"
-msgstr "المحتوى"
+msgstr ""
 
 #. Label of the content_html (HTML Editor) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Content (HTML)"
-msgstr "المحتوى (HTML)"
+msgstr ""
 
 #. Label of the content_md (Markdown Editor) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Content (Markdown)"
-msgstr "المحتوى (Markdown)"
+msgstr ""
 
 #. Label of the content_type (Select) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Content Type"
-msgstr "نوع المحتوى"
+msgstr ""
 
 #. Label of a shortcut in the Blog Workspace
-#. ai-translated; needs-native-review
 #: blog/blog/workspace/blog/blog.json
 msgid "Create New Blog"
-msgstr "إنشاء مدونة جديدة"
+msgstr ""
 
 #. Paragraph text in the Blog Workspace
-#. ai-translated; needs-native-review
 #: blog/blog/workspace/blog/blog.json
 msgid "Create&nbsp;"
-msgstr "إنشاء&nbsp;"
+msgstr ""
 
 #. Label of the description (Small Text) field in DocType 'Blog Category'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_category/blog_category.json
 msgid "Description"
-msgstr "الوصف"
+msgstr ""
 
 #. Description of the 'Blog Intro' (Small Text) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Description for listing page, in plain text, only a couple of lines. (max 200 characters)"
-msgstr "وصف لصفحة القائمة، بنص عادي، بضعة أسطر فقط. (200 حرف كحد أقصى)"
+msgstr ""
 
 #. Label of the disable_comments (Check) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Disable Comments"
-msgstr "تعطيل التعليقات"
+msgstr ""
 
 #. Label of the disable_likes (Check) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Disable Likes"
-msgstr "تعطيل الإعجابات"
+msgstr ""
 
 #. Label of the disabled (Check) field in DocType 'Blogger'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blogger/blogger.json
 msgid "Disabled"
-msgstr "معطّل"
+msgstr ""
 
 #. Label of the email_sent (Check) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Email Sent"
-msgstr "تم إرسال البريد الإلكتروني"
+msgstr ""
 
 #. Label of the enable_email_notification (Check) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Enable Email Notification"
-msgstr "تفعيل إشعار البريد الإلكتروني"
+msgstr ""
 
 #. Label of the enable_social_sharing (Check) field in DocType 'Blog Settings'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_settings/blog_settings.json
 msgid "Enable Social Sharing"
-msgstr "تفعيل المشاركة الاجتماعية"
+msgstr ""
 
 #. Description of the 'Enable Email Notification' (Check) field in DocType
 #. 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Enable email notification for any comment or likes received on your Blog Post."
-msgstr "تفعيل إشعار البريد الإلكتروني لأي تعليق أو إعجاب يصل إلى تدوينتك."
+msgstr ""
 
 #. Label of the featured (Check) field in DocType 'Blog Post'
-#: blog/blog/doctype/blog_post/blog_post.json blog/blog/doctype/blog_post/templates/blog_post_row.html:19
+#: blog/blog/doctype/blog_post/blog_post.json
+#: blog/blog/doctype/blog_post/templates/blog_post_row.html:19
 msgid "Featured"
-msgstr "مميز"
+msgstr ""
 
 #: blog/blog/doctype/blog_post/blog_post.py:268
 msgid "Filtered by \"{0}\""
-msgstr "مصفى حسب \"{0}\""
+msgstr ""
 
 #. Label of the full_name (Data) field in DocType 'Blogger'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blogger/blogger.json
 msgid "Full Name"
-msgstr "الاسم الكامل"
+msgstr ""
 
 #. Label of the google_preview (HTML) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Google Snippet Preview"
-msgstr "معاينة مقتطف Google"
+msgstr ""
 
 #. Option for the 'Content Type' (Select) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "HTML"
-msgstr "HTML"
+msgstr ""
 
 #. Label of the hide_cta (Check) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Hide CTA"
-msgstr "إخفاء الحث على الإجراء"
+msgstr ""
 
-#: blog/blog/doctype/blog_post/blog_post.py:159 blog/blog/doctype/blog_post/blog_post.py:271 blog/blog/doctype/blog_post/blog_post.py:273
+#: blog/blog/doctype/blog_post/blog_post.py:159
+#: blog/blog/doctype/blog_post/blog_post.py:271
+#: blog/blog/doctype/blog_post/blog_post.py:273
 msgid "Home"
-msgstr "الرئيسية"
+msgstr ""
 
 #. Label of the like_limit (Int) field in DocType 'Blog Settings'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_settings/blog_settings.json
 msgid "Like limit"
-msgstr "حد الإعجابات"
+msgstr ""
 
 #. Description of the 'Like limit' (Int) field in DocType 'Blog Settings'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_settings/blog_settings.json
 msgid "Like limit per hour"
-msgstr "حد الإعجابات في الساعة"
+msgstr ""
 
 #: blog/templates/includes/likes/likes.py:31
 msgid "Like on {0}: {1}"
-msgstr "إعجاب على {0}: {1}"
+msgstr ""
 
 #: blog/blog/doctype/blog_post/templates/blog_post_list.html:50
 msgid "Load More"
-msgstr "تحميل المزيد"
+msgstr ""
 
 #. Option for the 'Content Type' (Select) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Markdown"
-msgstr "Markdown"
+msgstr ""
 
 #. Label of the meta_description (Small Text) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Meta Description"
-msgstr "وصف ميتا"
+msgstr ""
 
 #. Label of the meta_image (Attach Image) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Meta Image"
-msgstr "صورة ميتا"
+msgstr ""
 
 #. Label of the meta_tags (Section Break) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Meta Tags"
-msgstr "وسوم ميتا"
+msgstr ""
 
 #. Label of the meta_title (Data) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Meta Title"
-msgstr "عنوان ميتا"
+msgstr ""
 
 #: blog/blog/doctype/blog_post/blog_post.py:415
 msgid "New Comment on {0}: {1}"
-msgstr "تعليق جديد على {0}: {1}"
+msgstr ""
 
 #: blog/blog/doctype/blog_post/blog_post.py:378
 msgid "No comments yet"
-msgstr "لا توجد تعليقات بعد"
+msgstr ""
 
 #: blog/blog/doctype/blog_post/blog_post_list.js:7
 msgid "Not Published"
-msgstr "غير منشور"
+msgstr ""
 
 #: blog/blog/doctype/blog_post/templates/blog_post_list.html:41
 msgid "Nothing to show"
-msgstr "لا يوجد ما يعرض"
+msgstr ""
 
 #: blog/blog/doctype/blog_post/blog_post.py:264
 msgid "Posts by {0}"
-msgstr "تدوينات {0}"
+msgstr ""
 
 #: blog/blog/doctype/blog_post/blog_post.py:256
 msgid "Posts filed under {0}"
-msgstr "تدوينات مصنفة ضمن {0}"
+msgstr ""
 
 #. Label of the preview_image (Attach Image) field in DocType 'Blog Category'
 #. Label of the preview_image (Attach Image) field in DocType 'Blog Settings'
-#. ai-translated; needs-native-review
-#: blog/blog/doctype/blog_category/blog_category.json blog/blog/doctype/blog_settings/blog_settings.json
+#: blog/blog/doctype/blog_category/blog_category.json
+#: blog/blog/doctype/blog_settings/blog_settings.json
 msgid "Preview Image"
-msgstr "صورة المعاينة"
+msgstr ""
 
 #: blog/blog/doctype/blog_post/blog_post.js:38
 msgid "Publish"
-msgstr "نشر"
+msgstr ""
 
 #. Label of the published (Check) field in DocType 'Blog Category'
 #. Label of the published (Check) field in DocType 'Blog Post'
-#: blog/blog/doctype/blog_category/blog_category.json blog/blog/doctype/blog_post/blog_post.json blog/blog/doctype/blog_post/blog_post_list.js:5
+#: blog/blog/doctype/blog_category/blog_category.json
+#: blog/blog/doctype/blog_post/blog_post.json
+#: blog/blog/doctype/blog_post/blog_post_list.js:5
 msgid "Published"
-msgstr "منشور"
+msgstr ""
 
 #. Label of the published_on (Date) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Published On"
-msgstr "تاريخ النشر"
+msgstr ""
 
 #: blog/blog/doctype/blog_post/templates/blog_post.html:59
 msgid "Published on"
-msgstr "نشر في"
+msgstr ""
 
 #. Label of the section_break_12 (Section Break) field in DocType 'Blog
 #. Settings'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_settings/blog_settings.json
 msgid "Rate Limits"
-msgstr "حدود المعدل"
+msgstr ""
 
 #. Label of the read_time (Int) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Read Time"
-msgstr "وقت القراءة"
+msgstr ""
 
 #. Paragraph text in the Blog Workspace
-#. ai-translated; needs-native-review
 #: blog/blog/workspace/blog/blog.json
 msgid "Recents"
-msgstr "الأحدث"
+msgstr ""
 
 #. Option for the 'Content Type' (Select) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "Rich Text"
-msgstr "نص منسّق"
+msgstr ""
 
 #. Label of the route (Data) field in DocType 'Blog Category'
 #. Label of the route (Data) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
-#: blog/blog/doctype/blog_category/blog_category.json blog/blog/doctype/blog_post/blog_post.json
+#: blog/blog/doctype/blog_category/blog_category.json
+#: blog/blog/doctype/blog_post/blog_post.json
 msgid "Route"
-msgstr "المسار"
+msgstr ""
 
 #. Description of a DocType
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_settings/blog_settings.json
 msgid "Settings to control blog categories and interactions like comments and likes"
-msgstr "إعدادات للتحكم في فئات المدونة والتفاعلات مثل التعليقات والإعجابات"
+msgstr ""
 
 #. Label of the short_name (Data) field in DocType 'Blogger'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blogger/blogger.json
 msgid "Short Name"
-msgstr "الاسم المختصر"
+msgstr ""
 
 #. Label of the show_cta_in_blog (Check) field in DocType 'Blog Settings'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_settings/blog_settings.json
 msgid "Show \"Call to Action\" in Blog"
-msgstr "إظهار \"الحث على الإجراء\" في المدونة"
+msgstr ""
 
 #: blog/blog/doctype/blog_post/templates/blog_post_list.html:24
 msgid "Show all blogs"
-msgstr "عرض جميع المدونات"
+msgstr ""
 
 #. Label of the subtitle (Data) field in DocType 'Blog Settings'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_settings/blog_settings.json
 msgid "Subtitle"
-msgstr "العنوان الفرعي"
+msgstr ""
 
 #. Description of the 'Google Snippet Preview' (HTML) field in DocType 'Blog
 #. Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "This is an example Google SERP Preview."
-msgstr "هذه معاينة نموذجية لنتائج بحث Google."
+msgstr ""
 
 #. Label of the title (Data) field in DocType 'Blog Category'
 #. Label of the title (Data) field in DocType 'Blog Post'
 #. Label of the title (Data) field in DocType 'Blog Settings'
-#. ai-translated; needs-native-review
-#: blog/blog/doctype/blog_category/blog_category.json blog/blog/doctype/blog_post/blog_post.json blog/blog/doctype/blog_settings/blog_settings.json
+#: blog/blog/doctype/blog_category/blog_category.json
+#: blog/blog/doctype/blog_post/blog_post.json
+#: blog/blog/doctype/blog_settings/blog_settings.json
 msgid "Title"
-msgstr "العنوان"
+msgstr ""
 
 #: blog/blog/doctype/blog_post/blog_post.js:38
 msgid "Unpublish"
-msgstr "إلغاء النشر"
+msgstr ""
 
 #. Label of the user (Link) field in DocType 'Blogger'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blogger/blogger.json
 msgid "User"
-msgstr "المستخدم"
+msgstr ""
 
 #. Description of a DocType
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blogger/blogger.json
 msgid "User ID of a Blogger"
-msgstr "معرّف مستخدم المدوّن"
+msgstr ""
 
 #: blog/templates/includes/likes/likes.py:35
 msgid "View Blog Post"
-msgstr "عرض التدوينة"
+msgstr ""
 
 #: blog/blog/doctype/blog_post/blog_post.py:410
 msgid "View Comment"
-msgstr "عرض التعليق"
+msgstr ""
 
 #. Name of a role
-#. ai-translated; needs-native-review
-#: blog/blog/doctype/blog_category/blog_category.json blog/blog/doctype/blog_post/blog_post.json blog/blog/doctype/blog_settings/blog_settings.json blog/blog/doctype/blogger/blogger.json
+#: blog/blog/doctype/blog_category/blog_category.json
+#: blog/blog/doctype/blog_post/blog_post.json
+#: blog/blog/doctype/blog_settings/blog_settings.json
+#: blog/blog/doctype/blogger/blogger.json
 msgid "Website Manager"
-msgstr "مدير الموقع"
+msgstr ""
 
 #. Description of the 'Short Name' (Data) field in DocType 'Blogger'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blogger/blogger.json
 msgid "Will be used in url (usually first name)."
-msgstr "سيُستخدم في الرابط (عادةً الاسم الأول)."
+msgstr ""
 
 #: blog/templates/includes/likes/likes.py:32
 msgid "You have received a ❤️ like on your blog post"
-msgstr "لقد تلقيت إعجابا ❤️ على تدوينتك"
+msgstr ""
 
 #. Description of the 'Read Time' (Int) field in DocType 'Blog Post'
-#. ai-translated; needs-native-review
 #: blog/blog/doctype/blog_post/blog_post.json
 msgid "in minutes"
-msgstr "بالدقائق"
+msgstr ""
 
-#: blog/blog/doctype/blog_post/templates/blog_post.html:25 blog/blog/doctype/blog_post/templates/blog_post_row.html:36
+#: blog/blog/doctype/blog_post/templates/blog_post.html:25
+#: blog/blog/doctype/blog_post/templates/blog_post_row.html:36
 msgid "min read"
-msgstr "دقيقة قراءة"
+msgstr ""
 
 #: blog/blog/doctype/blog_post/blog_post.py:382
 msgid "{0} comments"
-msgstr "{0} تعليقات"
+msgstr ""
+
