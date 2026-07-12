@@ -202,12 +202,28 @@ class BlogPost(WebsiteGenerator):
 		]
 
 	def load_comments(self, context):
-		context.comment_list = get_comment_list(self.doctype, self.name)
+		comments = get_comment_list(self.doctype, self.name) or []
 
-		if not context.comment_list:
-			context.comment_count = 0
-		else:
-			context.comment_count = len(context.comment_list)
+		# Moderation: hide comments still pending approval (published=0). Safe regardless of
+		# whether get_comment_list already filters — we only ever remove known-unpublished
+		# names, never valid ones.
+		pending = set(
+			frappe.get_all(
+				"Comment",
+				filters={
+					"reference_doctype": self.doctype,
+					"reference_name": self.name,
+					"comment_type": "Comment",
+					"published": 0,
+				},
+				pluck="name",
+			)
+		)
+		if pending:
+			comments = [c for c in comments if c.get("name") not in pending]
+
+		context.comment_list = comments
+		context.comment_count = len(comments)
 
 	def load_likes(self, context):
 		user = frappe.session.user
@@ -396,7 +412,39 @@ def get_blog_list(doctype, txt=None, filters=None, limit_start=0, limit_page_len
 	return posts
 
 
-def send_email(doc, method):
+def has_outgoing_email_account():
+	"""True if a usable default outgoing Email Account exists. Used to avoid crashing
+	a like/comment with 'Please setup default outgoing Email Account' on sites (e.g. a
+	fresh client blog) that have no SMTP configured yet."""
+	return bool(frappe.db.exists("Email Account", {"enable_outgoing": 1, "default_outgoing": 1}))
+
+
+def safe_sendmail(**kwargs):
+	"""Send a notification e-mail, but never let a missing/broken outgoing e-mail account
+	break the visitor action (like/comment) that triggered it."""
+	if not has_outgoing_email_account():
+		return
+	try:
+		frappe.sendmail(**kwargs)
+	except Exception:
+		frappe.log_error(title="Blog notification email failed")
+
+
+def moderate_comment(doc, method=None):
+	"""Hold new visitor comments on Blog Posts for author approval (moderation).
+	Frappe creates website comments already published; flip them to unpublished so
+	they only appear after an admin/author approves (toggles Published in the Comment
+	list). Comments by the post's own author or a System Manager are auto-approved."""
+	if doc.reference_doctype != "Blog Post" or doc.comment_type != "Comment":
+		return
+	commenter = doc.comment_email or frappe.session.user
+	blog_owner = frappe.db.get_value("Blog Post", doc.reference_name, "owner")
+	privileged = commenter == blog_owner or "System Manager" in frappe.get_roles(commenter)
+	if not privileged and doc.published:
+		doc.db_set("published", 0, update_modified=False)
+
+
+def send_email(doc, method=None):
 	if doc.reference_doctype == "Blog Post" and doc.comment_type == "Comment":
 		if doc.reference_name:
 			blog = frappe.get_doc(doc.reference_doctype, doc.reference_name)
@@ -413,7 +461,7 @@ def send_email(doc, method):
 			if blog.enable_email_notification:
 				creator_email = frappe.db.get_value("User", blog.owner, "email") or blog.owner
 				subject = _("New Comment on {0}: {1}").format(blog.doctype, blog.get_title())
-				frappe.sendmail(
+				safe_sendmail(
 					recipients=creator_email,
 					subject=subject,
 					message=content,
