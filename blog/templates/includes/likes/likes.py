@@ -6,6 +6,7 @@ from frappe import _
 from frappe.rate_limiter import rate_limit
 from frappe.website.utils import clear_cache
 
+from blog.blog.doctype.blog_post.blog_post import safe_sendmail
 from blog.blog.doctype.blog_settings.blog_settings import get_like_limit
 
 
@@ -35,8 +36,8 @@ def like(reference_doctype, reference_name, like, route=""):
 			frappe.utils.get_request_site_address(), ref_doc.route, _("View Blog Post")
 		)
 
-		# notify creator
-		frappe.sendmail(
+		# notify creator (no-op if the site has no outgoing email account configured)
+		safe_sendmail(
 			recipients=frappe.db.get_value("User", ref_doc.owner, "email") or ref_doc.owner,
 			subject=subject,
 			message=message,

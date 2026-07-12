@@ -132,7 +132,15 @@ web_include_css = "/assets/blog/css/blog.scss"
 # ---------------
 # Hook on document methods and events
 
-doc_events = {"Comment": {"after_insert": "blog.blog.doctype.blog_post.blog_post.send_email"}}
+doc_events = {
+	"Comment": {
+		"after_insert": [
+			# hold new visitor comments for author approval, then notify (moderation first)
+			"blog.blog.doctype.blog_post.blog_post.moderate_comment",
+			"blog.blog.doctype.blog_post.blog_post.send_email",
+		]
+	}
+}
 
 # Scheduled Tasks
 # ---------------
