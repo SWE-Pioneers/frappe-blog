@@ -51,11 +51,11 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			background: $gray-200;
+			background: var(--gray-200, #e9ecef);
 
 			font-size: 1.2rem;
 			font-weight: 500;
-			color: $gray-600;
+			color: var(--gray-600, #6c757d);
 		}
 	}
 
@@ -81,14 +81,14 @@
 
 		@include media-breakpoint-up(xl) {
 			line-height: 1;
-			font-size: $font-size-4xl;
+			font-size: var(--text-4xl, 2.25rem);
 		}
 	}
 
 	.blog-footer {
 		display: flex;
 		justify-content: space-between;
-		color: $text-muted;
+		color: var(--text-muted, #6c757d);
 		margin-top: 3rem;
 	}
 
