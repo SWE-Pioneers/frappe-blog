@@ -79,7 +79,7 @@
 	.blog-title {
 		margin-top: 1rem;
 
-		@include media-breakpoint-up(xl) {
+		@media (min-width: 1200px) {
 			line-height: 1;
 			font-size: var(--text-4xl, 2.25rem);
 		}
