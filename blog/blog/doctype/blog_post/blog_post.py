@@ -430,18 +430,60 @@ def safe_sendmail(**kwargs):
 		frappe.log_error(title="Blog notification email failed")
 
 
+COMMENTER_ROLE = "Approved Commenter"
+
+
+def ensure_commenter_role():
+	"""Create the desk-less 'Approved Commenter' role used to confirm reader accounts.
+	Idempotent; run on install + migrate."""
+	if not frappe.db.exists("Role", COMMENTER_ROLE):
+		frappe.get_doc(
+			{"doctype": "Role", "role_name": COMMENTER_ROLE, "desk_access": 0}
+		).insert(ignore_permissions=True)
+
+
+def is_trusted_commenter(user, blog_name):
+	"""A comment goes live immediately only for a trusted account: the post's own
+	author, a System Manager, or an account a supervisor has confirmed by granting
+	the 'Approved Commenter' role. Anonymous guests and still-under-review accounts
+	are moderated."""
+	if not user or user == "Guest":
+		return False
+	roles = frappe.get_roles(user)
+	if "System Manager" in roles or COMMENTER_ROLE in roles:
+		return True
+	return user == frappe.db.get_value("Blog Post", blog_name, "owner")
+
+
 def moderate_comment(doc, method=None):
-	"""Hold new visitor comments on Blog Posts for author approval (moderation).
-	Frappe creates website comments already published; flip them to unpublished so
-	they only appear after an admin/author approves (toggles Published in the Comment
-	list). Comments by the post's own author or a System Manager are auto-approved."""
+	"""Account-level moderation. Under-review accounts (and anonymous guests) are
+	allowed in and may comment, but their comments stay hidden (published=0) until a
+	supervisor confirms the account (grants 'Approved Commenter'). Trusted accounts
+	post live."""
 	if doc.reference_doctype != "Blog Post" or doc.comment_type != "Comment":
 		return
 	commenter = doc.comment_email or frappe.session.user
-	blog_owner = frappe.db.get_value("Blog Post", doc.reference_name, "owner")
-	privileged = commenter == blog_owner or "System Manager" in frappe.get_roles(commenter)
-	if not privileged and doc.published:
+	if not is_trusted_commenter(commenter, doc.reference_name) and doc.published:
 		doc.db_set("published", 0, update_modified=False)
+
+
+def publish_comments_on_account_approval(doc, method=None):
+	"""User on_update: when a supervisor confirms an account (grants 'Approved
+	Commenter'), release that account's previously-held Blog Post comments live."""
+	if COMMENTER_ROLE not in {r.role for r in doc.get("roles", [])}:
+		return
+	held = frappe.get_all(
+		"Comment",
+		filters={
+			"comment_type": "Comment",
+			"reference_doctype": "Blog Post",
+			"comment_email": doc.name,
+			"published": 0,
+		},
+		pluck="name",
+	)
+	for name in held:
+		frappe.db.set_value("Comment", name, "published", 1, update_modified=False)
 
 
 def send_email(doc, method=None):
