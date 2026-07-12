@@ -29,7 +29,10 @@ add_to_apps_screen = [
 # app_include_js = "/assets/blog/js/blog.js"
 
 # include js, css files in header of web template
-web_include_css = "/assets/blog/css/blog.scss"
+# compiled bundle (blog/public/scss/blog.bundle.scss -> dist), served as text/css.
+# Referencing the raw .scss served it as application/octet-stream, which strict-MIME
+# browsers refuse to apply as a stylesheet.
+web_include_css = "blog.bundle.css"
 # web_include_js = "/assets/blog/js/blog.js"
 
 # include custom scss in every website theme (without file extension ".scss")
@@ -139,8 +142,17 @@ doc_events = {
 			"blog.blog.doctype.blog_post.blog_post.moderate_comment",
 			"blog.blog.doctype.blog_post.blog_post.send_email",
 		]
-	}
+	},
+	"User": {
+		# when a supervisor confirms an account (grants 'Approved Commenter'),
+		# release that account's previously-held comments live
+		"on_update": "blog.blog.doctype.blog_post.blog_post.publish_comments_on_account_approval",
+	},
 }
+
+# ensure the 'Approved Commenter' role exists on install + on every migrate
+after_install = "blog.blog.doctype.blog_post.blog_post.ensure_commenter_role"
+after_migrate = "blog.blog.doctype.blog_post.blog_post.ensure_commenter_role"
 
 # Scheduled Tasks
 # ---------------
